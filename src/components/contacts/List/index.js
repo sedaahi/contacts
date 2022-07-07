@@ -2,11 +2,11 @@ import { useState } from "react";
 import "../style.css";
 
 function List({ contacts,setContacts }) {
+
   const [filterText, setFilterText] = useState("");
 
-  // contacts'i burada filitrele sonra ====*> filitrelenmiş sonuçları listele
-  //objelerin keylerini al(fullname,phoennum, )herhangi biri şarsa uyuyorsa=>
   const filtered = contacts.filter((item) => {
+    
     return Object.keys(item).some((key) =>
       item[key]
         .toString()
@@ -33,7 +33,7 @@ return (
     <ul className="list">
       {filtered.map((contact, i) => (
         <li key={i}>
-          {contact.fullname}
+          {contact.fullname} - {contact.phone_number}
           <button className="deleteBtn" onClick={(e) => deleteItem(e,i)}>Delete</button>
         </li>
       ))}

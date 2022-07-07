@@ -43,7 +43,7 @@ body {
   text-align: center;
 }
 .deleteBtn {
-  background-color: rgb(158, 156, 156);
+  background-color: rgb(200, 199, 199);
   display: flex;
   margin-left: auto;
 }

@@ -5,9 +5,7 @@ import List from "./List";
 import Form from "./Form";
 
 function Contacts() {
-  // useState array olmalı-> birden fazla elemanı tutmak istediğimiz için
 
-  // sonra <Form>'a setContact'i gönderdik addContact adı ile ve Form Componentinin proplarına addContact'İ verki atamayı yapacak fonksiyonu o componente al (function'da)==>
   const [contacts, setContacts] = useState([
     {
       fullname: "John",
@@ -18,10 +16,9 @@ function Contacts() {
     }
   ]);
 
-  //Ekleme işlemi yapıldığında son halini görmek için
   useEffect(() => {
     console.log(contacts);
-  }, [contacts]);
+  }, [contacts]);  //addContact ile contacts array'ne ekleme yapıldığında, array'in consoleda son halini göster
 
   return (
     <div id="container">
@@ -29,7 +26,6 @@ function Contacts() {
       <List contacts={contacts} setContacts={setContacts} />
       <Form addContact={setContacts} contacts={contacts} /> 
 
-      {/* eldeki eski verileride gönder */}
     </div>
   );
 }
